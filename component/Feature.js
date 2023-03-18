@@ -26,19 +26,17 @@ export default function Feature({ result }) {
               <p className="text-3xl font-bold ">
                 Hot & <span className="text-[yellowGreen] ">Spicy</span>
               </p>
-              <h2 className="text-[8rem] font-bold text-red-500 ">Pizza</h2>
+              <h2 className="text-[8rem] font-bold text-red-500  ">Pizza</h2>
               <h1 className="text-5xl  ">-</h1>
-              <p className="text-2xl font-bold ">50% Off</p>
-              <Button
+              <p className="text-2xl font-semibold mb-4 ">
+                50% Off Get it soon{" "}
+              </p>
+              <button
                 onClick={MoveToProducts}
-                style={{
-                  backgroundColor: "#ff4d4f",
-                  color: "white",
-                  width: "170px",
-                }}
+                className=" bg-[#ff4d4f] text-white w-[170px] p-2 rounded-lg text-lg hover:bg-red-500 hover:text-gray-300 font-semibold hover:border-gray-300 "
               >
                 Order Now
-              </Button>
+              </button>
             </div>
           </div>
           <div className=" h-[86vh] bg-red w-[100vw] relative bg-[url('/img/bgPizza4.jpg')] bg-no-repeat bg-center bg-cover ">
@@ -46,19 +44,17 @@ export default function Feature({ result }) {
               <p className="text-3xl font-bold ">
                 Hot & <span className="text-[yellowGreen] ">Spicy</span>
               </p>
-              <h2 className="text-[8rem] font-bold text-red-500 ">Pizza</h2>
+              <h2 className="text-[8rem] font-bold text-red-500  ">Pizza</h2>
               <h1 className="text-5xl  ">-</h1>
-              <p className="text-2xl font-bold ">50% Off</p>
-              <Button
+              <p className="text-2xl font-semibold mb-4 ">
+                50% Off Get it soon{" "}
+              </p>
+              <button
                 onClick={MoveToProducts}
-                style={{
-                  backgroundColor: "#ff4d4f",
-                  color: "white",
-                  width: "170px",
-                }}
+                className=" bg-[#ff4d4f] text-white w-[170px] p-2 rounded-lg text-lg hover:bg-red-500 hover:text-gray-300 font-semibold hover:border-gray-300 "
               >
                 Order Now
-              </Button>
+              </button>
             </div>
           </div>
           <div className=" h-[86vh] bg-red w-[100vw] relative bg-[url('/img/bgPizza5.jpg')] bg-no-repeat bg-center bg-cover ">
@@ -66,19 +62,17 @@ export default function Feature({ result }) {
               <p className="text-3xl font-bold ">
                 Hot & <span className="text-[yellowGreen] ">Spicy</span>
               </p>
-              <h2 className="text-[8rem] font-bold text-red-500 ">Pizza</h2>
+              <h2 className="text-[8rem] font-bold text-red-500  ">Pizza</h2>
               <h1 className="text-5xl  ">-</h1>
-              <p className="text-2xl font-bold ">50% Off</p>
-              <Button
+              <p className="text-2xl font-semibold mb-4 ">
+                50% Off Get it soon{" "}
+              </p>
+              <button
                 onClick={MoveToProducts}
-                style={{
-                  backgroundColor: "#ff4d4f",
-                  color: "white",
-                  width: "170px",
-                }}
+                className=" bg-[#ff4d4f] text-white w-[170px] p-2 rounded-lg text-lg hover:bg-red-500 hover:text-gray-300 font-semibold hover:border-gray-300 "
               >
                 Order Now
-              </Button>
+              </button>
             </div>
           </div>
         </Carousel>

@@ -11,7 +11,7 @@ const Cart = () => {
   let cartData = useSelector((state) => state.cartItem.data);
   let dispatch = useDispatch();
 
-  console.log("cartData====", cartData);
+  //console.log("cartData====", cartData);
 
   /**  total amount ************** */
   let total_tax = (
@@ -22,19 +22,23 @@ const Cart = () => {
     (acc, val) => acc + val.curr_price * val.count,
     0
   );
- 
+
   return (
     <>
       <div className=" w-[100vw] flex tablet:flex-row flex-col   min-h-[400px]  gap-3 p-2 ">
-        <div className="tablet:w-[60%] w-[100%] ">
+        <div className="tablet:w-[60%] w-[100%] max-h-[85vh] overflow-auto ">
           {cartData.length > 0 ? (
-            cartData.map((val) => {
+            cartData.map((val, i) => {
               return (
                 <Card
+                  key={val.id}
                   hoverable
-                  className="w-[100%] justify-center h-[100px] mb-2 "
+                  className="w-[100%] justify-center h-[100px] mb-2  "
                 >
-                  <div className=" flex w-[100%] justify-between  items-center  ">
+                  <div
+                    key={val.id}
+                    className=" flex w-[100%] justify-between  items-center  "
+                  >
                     <div className="flex justify-center items-center ">
                       <img
                         src={val.img}
@@ -85,9 +89,10 @@ const Cart = () => {
           )}
         </div>
 
-        <Card hoverable className=" tablet:w-[38%] w-[100%] ">
+        <Card hoverable className="  tablet:w-[38%] w-[100%] ">
           <h2 className="text-2xl font-semibold ">Bill Summary</h2>
           <List
+            className="max-h-[60vh] overflow-auto"
             size="small"
             // header={<div>Header</div>}
             // footer={<div>Footer</div>}
@@ -136,9 +141,7 @@ const Cart = () => {
                   </List.Item>
                 </div>
                 <div className="flex gap-4 ">
-                  <p className="flex items-center gap-2 ">
-                    Total Tax
-                  </p>
+                  <p className="flex items-center gap-2 ">Total Tax</p>
                   <Tooltip
                     title={
                       <div>

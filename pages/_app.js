@@ -4,6 +4,8 @@ import { useState } from "react";
 import { Provider } from "react-redux";
 import { store } from "../store/store";
 import { Roboto } from "@next/font/google";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 const roboto = Roboto({
   subsets: ["latin"],
   weight: ["300", "700"],

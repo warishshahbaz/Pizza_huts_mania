@@ -2,6 +2,7 @@ import { Button, Card } from "antd";
 import { useDispatch } from "react-redux";
 import { veg_pizza } from "../Data";
 import { addCartItem } from "../store/slice/cartSlice";
+import SlideshowImg from "./SlideshowImg";
 const { Meta } = Card;
 
 const PopularItems = () => {
@@ -12,7 +13,10 @@ const PopularItems = () => {
   };
   return (
     <>
-      <div className=" w-[100vw] flex justify-center items-center flex-col ">
+      <div className=" w-[100vw] flex justify-center items-center mb-3 ">
+        <SlideshowImg data={veg_pizza} title="Most popular Deals" />
+      </div>
+      {/* <div className=" w-[100vw] flex justify-center items-center flex-col ">
         <h2 className="text-3xl font-semibold text-center ">
           Our Most Popular Deals
         </h2>
@@ -54,7 +58,7 @@ const PopularItems = () => {
             );
           })}
         </div>
-      </div>
+      </div> */}
     </>
   );
 };
