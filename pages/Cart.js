@@ -6,10 +6,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { addCartItem, decreament, increament } from "../store/slice/cartSlice";
 import { RiErrorWarningLine } from "react-icons/ri";
+import Payment from "../component/Payment";
 
 const Cart = () => {
   let cartData = useSelector((state) => state.cartItem.data);
   let dispatch = useDispatch();
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   //console.log("cartData====", cartData);
 
@@ -164,7 +166,7 @@ const Cart = () => {
               </div>
               <div className=" flex justify-end  mt-3 ">
                 <Button
-                  onClick={""}
+                  onClick={() => setIsModalOpen(true)}
                   className=" w-[150px] bg-green-500 text-white "
                 >
                   Place Order
@@ -174,6 +176,7 @@ const Cart = () => {
           ) : null}
         </Card>
       </div>
+      <Payment setIsModalOpen={setIsModalOpen} isModalOpen={isModalOpen} />
     </>
   );
 };

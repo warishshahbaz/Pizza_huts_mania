@@ -96,10 +96,11 @@ export default function SlideshowImg({ data, title }) {
               <Card
                 key={val.id}
                 hoverable
-                style={{
-                //   width: 290,
-                  
-                }}
+                style={
+                  {
+                    //   width: 290,
+                  }
+                }
                 cover={
                   <img
                     alt="example"
