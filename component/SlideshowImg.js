@@ -5,6 +5,7 @@ import Slider from "react-slick";
 import LeftArrow from "../public/img/right.png";
 import RightArrow from "../public/img/right1.png";
 import { addCartItem } from "../store/slice/cartSlice";
+import Image from "next/image";
 
 const { Meta } = Card;
 export default function SlideshowImg({ data, title }) {
@@ -85,47 +86,51 @@ export default function SlideshowImg({ data, title }) {
     dispatch(addCartItem({ ...val, count: val.count + 1 }));
   };
   return (
-    <div className=" w-[80%] ">
+    <div className=" w-[80%] mt-8 mb-5 ">
       <h2 className=" text-center tablet:text-2xl tablet:font-semibold text-xl capitilize mb-3 ">
         {title}
       </h2>
       <Slider {...settings}>
         {data.map((val, i) => {
           return (
-            <div className="mb-4 ">
+            <div key={val.id} className="p-4">
               <Card
                 key={val.id}
                 hoverable
-                style={
-                  {
-                    //   width: 290,
-                  }
-                }
+                className="mx-2 shadow-md w-full p-0 "
                 cover={
                   <img
                     alt="example"
                     src={val.img}
+                    width="100%"
                     className=" h-[200px] object-fill "
                   />
                 }
               >
                 <Meta title={val.title} />
-                <div className="flex justify-between items-center  ">
+
+                <div className=" ">
+                  <div className="flex justify-between items-center gap-2  ">
+                    <div>
+                      <span className="text-gray-400 line-through text-[14px] ">
+                        ₹ {val.prev_price}
+                      </span>
+                      <span className="text-gray-400 text-[12px] ">
+                        {val.discount}% off
+                      </span>
+                    </div>
+
+                    <p className="text-[17px] font-semibold ">
+                      ₹ {val.curr_price}
+                    </p>
+                  </div>
                   <Button
+                    type="secondary"
                     onClick={() => handleGetCartItem(val)}
-                    className="bg-[#ff4d4f] text-white mt-2 "
+                    className="bg-[#ff4d4f] hover:bg-red-700 text-white mt-2 "
                   >
                     Add To Cart
                   </Button>
-                  <div className="flex justify-center items-center gap-2  ">
-                    <span className="text-gray-400 line-through text-[14 px] ">
-                      ₹ {val.prev_price}
-                    </span>{" "}
-                    <span className="text-gray-400 text-[12px] ">
-                      {val.discount}% off
-                    </span>
-                    <p>₹ {val.curr_price}</p>
-                  </div>
                 </div>
               </Card>
             </div>

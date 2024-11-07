@@ -13,7 +13,7 @@ const PopularItems = () => {
   };
   return (
     <>
-      <div className=" w-[100vw] flex justify-center items-center mb-3 ">
+      <div className="  flex justify-center items-center mb-3 ">
         <SlideshowImg data={veg_pizza} title="Most popular Deals" />
       </div>
       {/* <div className=" w-[100vw] flex justify-center items-center flex-col ">

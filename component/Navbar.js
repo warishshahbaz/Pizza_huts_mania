@@ -21,7 +21,7 @@ export default function Navbar() {
   return (
     <>
       <div
-        className={`w-[100vw] h-[100px] p-[0px 50px] bg-[#ff4d4f] flex justify-between items-center sticky `}
+        className={` h-[70px] p-[0px 50px] bg-[#ff4d4f] flex justify-between items-center sticky `}
       >
         <div className={` flex-1 `}>
           <div className={` flex items-center ml-2 `}>
@@ -35,7 +35,7 @@ export default function Navbar() {
               >
                 Order Here!
               </h3>
-              <h5 className=" laptop:text-2xl text-[15px]  laptop:font-bold ">
+              <h5 className=" laptop:text-[1.2rem] text-[15px]  laptop:font-bold ">
                 +856 535979
               </h5>
             </div>
@@ -76,7 +76,7 @@ export default function Navbar() {
               />
             </span>
 
-            <span className="text-2xl rounded-[50%]  w-[30px] h-[30px] bg-white flex justify-center items-center relative bottom-4  ">
+            <span className="text-[14px] rounded-[50%]  w-[20px] h-[20px] bg-white flex justify-center items-center relative bottom-4 ">
               {noOfItem}
             </span>
           </div>

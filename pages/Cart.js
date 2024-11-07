@@ -7,6 +7,7 @@ import { useState } from "react";
 import { addCartItem, decreament, increament } from "../store/slice/cartSlice";
 import { RiErrorWarningLine } from "react-icons/ri";
 import Payment from "../component/Payment";
+import OrderCompleted from "../component/OrderCompleted";
 
 const Cart = () => {
   let cartData = useSelector((state) => state.cartItem.data);
@@ -47,17 +48,17 @@ const Cart = () => {
                         alt="image"
                         width={70}
                         height={70}
-                        className="rounded-[50%] tablet:mr-3  object-contain "
+                        className="rounded-[50%] tablet:mr-3  object-cover "
                       />
                       <div className=" flex items-center flex-col justify-center ">
-                        <p className=" text-start tablet:text-xl text-ellipsis capitalize font-semibold ">
+                        <p className=" text-start tablet:text-xl text-ellipsis capitalize font-semibold font-sans ">
                           {val.title}
                         </p>
                         <div className="flex tablet:w-[200px] w-[150px]  justify-around items-center ">
-                          <p className=" line-through text-gray-400 tablet:text-xl text-[12px] ">
+                          <p className=" line-through text-gray-400 tablet:text-xl text-[10px] ">
                             ₹ 499
                           </p>
-                          <span className="  text-gray-400 tablet:text-xl text-[12px] ">
+                          <span className="  text-gray-400 tablet:text-xl text-[10px] ">
                             50% off
                           </span>
                           <span className="   tablet:text-xl text-[12px] ">
@@ -68,11 +69,15 @@ const Cart = () => {
                     </div>
                     <div className=" flex tablet:w-[100px] w-[80px] gap-2 tablet:flex-row flex-col justify-between items-center ">
                       <button className="tablet:text-2xl">
-                        <BsPlusLg onClick={() => dispatch(increament(val))} />
+                        <BsPlusLg
+                          size={20}
+                          onClick={() => dispatch(increament(val))}
+                        />
                       </button>
                       <span className="tablet:text-2xl">{val.count}</span>
                       <button className="tablet:text-2xl ">
                         <AiOutlineMinus
+                          size={20}
                           onClick={() => dispatch(decreament(val))}
                         />
                       </button>
@@ -142,7 +147,7 @@ const Cart = () => {
                       )}
                   </List.Item>
                 </div>
-                <div className="flex gap-4 ">
+                <div className="flex gap-4 items-center ">
                   <p className="flex items-center gap-2 ">Total Tax</p>
                   <Tooltip
                     title={
@@ -152,7 +157,9 @@ const Cart = () => {
                       </div>
                     }
                   >
-                    <RiErrorWarningLine />
+                    <span>
+                      <RiErrorWarningLine color="gray" />
+                    </span>
                   </Tooltip>
                   <List.Item className="text-xl ">₹ {total_tax}</List.Item>
                 </div>
@@ -166,8 +173,10 @@ const Cart = () => {
               </div>
               <div className=" flex justify-end  mt-3 ">
                 <Button
+                  type="secondary"
+                  size="large"
                   onClick={() => setIsModalOpen(true)}
-                  className=" w-[150px] bg-green-500 text-white "
+                  className="  bg-green-400 hover:bg-green-600 text-white text-xl pb-12 pt-3 "
                 >
                   Place Order
                 </Button>
