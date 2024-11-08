@@ -117,11 +117,19 @@ const Hero = ({ onClick }) => {
         </div>
       </div>
       {/* <div className="w-2/3 bg-white flex-shrink-0  relative"> */}
-      <img
+      <Image
+        src="/payments.svg"
+        width={36}
+        height={36}
+        style={{ objectFit: "contain", borderRadius: "50%" }}
+        className="w-full md:w-[36rem] rounded-full h-full"
+        alt="payment"
+      />
+      {/* <img
         className="w-full md:w-[36rem] h-full"
         alt="stripe payment from undraw"
         src="/payments.svg"
-      />
+      /> */}
       {/* </div> */}
     </div>
   );

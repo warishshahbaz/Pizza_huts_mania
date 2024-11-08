@@ -1,5 +1,5 @@
 import { Button, Card, Divider, List, Tooltip } from "antd";
-import Image from "antd";
+import Image from "next/image";
 import { AiOutlineMinus } from "react-icons/ai";
 import { BsPlusLg } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
@@ -43,13 +43,20 @@ const Cart = () => {
                     className=" flex w-[100%] justify-between  items-center  "
                   >
                     <div className="flex justify-center items-center ">
-                      <img
+                      <Image
+                        src={val.img}
+                        width={70}
+                        height={70}
+                        className="rounded-[50%]   object-fill "
+                        alt="Picture of the item"
+                      />
+                      {/* <img
                         src={val.img}
                         alt="image"
                         width={70}
                         height={70}
                         className="rounded-[50%] tablet:mr-3  object-cover "
-                      />
+                      /> */}
                       <div className=" flex items-center flex-col justify-center ">
                         <p className=" text-start tablet:text-xl text-ellipsis capitalize font-semibold font-sans ">
                           {val.title}
